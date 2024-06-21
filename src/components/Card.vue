@@ -1,12 +1,10 @@
 <template>
-    <div class="card" >
-      <div class="card-header">
-        <slot name="cardheader"></slot>
-      </div>
-      <div class="card-body">
-        <slot name="cardbody"></slot>
-      </div>
-    </div>
+  <div class="card" >
+    <slot name="cardheader"></slot>
+  <div class="card-body">
+    <slot name="cardbody"></slot>
+  </div>
+</div>
   </template>
   
   <script>
@@ -18,13 +16,7 @@
   <style>
   .card {
     width: 18rem;
-    margin: 10px;
   }
-  .male {
-    border-color: gold;
-  }
-  .female {
-    border-color: pink;
-  }
+  
   </style>
   

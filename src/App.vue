@@ -7,7 +7,6 @@
     <Friends/>
   </div>
   <div class="row">
-    <h3>Products</h3>
     <Products/>
   </div>
  </div>
