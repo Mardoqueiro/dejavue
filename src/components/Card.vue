@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card" >
       <div class="card-header">
         <slot name="cardheader"></slot>
       </div>
@@ -17,12 +17,13 @@
   
   <style>
   .card {
-      width: 18rem;
+    width: 18rem;
+    margin: 10px;
   }
-  .border-gold {
+  .male {
     border-color: gold;
   }
-  .border-pink {
+  .female {
     border-color: pink;
   }
   </style>
