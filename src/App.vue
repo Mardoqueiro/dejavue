@@ -7,6 +7,7 @@
     <Friends/>
   </div>
   <div class="row">
+    <h3>Products</h3>
     <Products/>
   </div>
  </div>
@@ -21,32 +22,6 @@ export default {
   components: {
     Friends,
     Products,
-  },
-  data() {
-    return {
-      friends: [
-      {
-        firstName: "Mardoqueiro",
-        lastName: "Dimbu",
-        profile: 'https://mardoqueiro.github.io/all_images/E-com_/Team-photo/Gitprofil.jpg'
-      },
-      {
-        firstName: "Ordi",
-        lastName: "Kitoko",
-        profile: 'https://mardoqueiro.github.io/all_images/E-com_/Team-photo/IMG_20240607_135942_589.jpg'
-      },
-      {
-        firstName: "Terence",
-        lastName: "Tweng",
-        profile: 'https://mardoqueiro.github.io/all_images/E-com_/Team-photo/IMG_20240607_150343_596.jpg'
-      },
-      {
-        firstName: "Kamva",
-        lastName: "Banzi",
-        profile: 'https://mardoqueiro.github.io/all_images/E-com_/Team-photo/Screenshot_20240607_150245_WhatsApp.jpg'
-      },
-      ]
-    }
   }
 }
 </script>
@@ -61,7 +36,4 @@ export default {
   margin-top: 60px;
 }
 
-.card {
-  display: grid;
-}
 </style>
