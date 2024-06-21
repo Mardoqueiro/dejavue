@@ -1,15 +1,20 @@
 <template>
-    <div>
-      <Card v-for="product in products" :key="product.id">
-        <template #cardheader>
-            <img class="img-fluid" :src="product.image" :alt="product.productName" loading="lazy">
-            {{ product.productName }}</template>
-        <template #cardbody>
-          <p>Description: {{ product.description }}</p>
-          <p>Price: {{ product.price }}</p>
-          <p>Status: {{ product.status }}</p>
-        </template>
-      </Card>
+    <div class="container">
+      <div class="row">
+        <h3 class="display-2">Products</h3>
+      </div>
+      <div class="row gap-2">
+        <Card v-for="product in products" :key="product.id">
+          <template #cardheader>
+              <img class="img-fluid" :src="product.image" :alt="product.productName" loading="lazy">
+              {{ product.productName }}</template>
+          <template #cardbody>
+            <p>Description: {{ product.description }}</p>
+            <p>Price: {{ product.price }}</p>
+            <p>Status: {{ product.status }}</p>
+          </template>
+        </Card>
+      </div>
     </div>
   </template>
   

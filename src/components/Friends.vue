@@ -1,25 +1,25 @@
 <template>
     <div class="container">
-        <div class="row">
-            <h3>Friends</h3>
+      <div class="row">
+          <h3 class="display-2">Friends</h3>
+      </div>
+      <div class="row gap-2" v-if="friends.length">
+        <Card v-for="friend in friends" :key="friend.id" :class="{male: friend.gender == 'male', female: friend.gender == 'female'}" >
+          <template #cardheader>
+              <img class="img-fluid" :src="friend.profile" :alt="friend.firstName" loading="lazy">
+            {{ friend.firstName }} {{ friend.lastName }}
+            </template>
+          <template #cardbody>
+            <p>Gender: {{ friend.gender }}</p>
+            <p>contact: {{ friend.contact }}</p>
+          </template>
+        </Card>
+      </div>
+      <div class="d-flex justify-content-center" v-else>
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
         </div>
-        <div class="row gap-2">
-            <div v-if="friends.length">
-              <Card v-for="friend in friends" :key="friend.id" :gender="friend.gender">
-                <template #cardheader>
-                    <img class="img-fluid" :src="friend.profile" :alt="friend.firstName" loading="lazy">
-                  {{ friend.firstName }} {{ friend.lastName }}
-                  </template>
-                <template #cardbody>
-                  <p>Gender: {{ friend.gender }}</p>
-                  <p>contact: {{ friend.contact }}</p>
-                </template>
-              </Card>
-            </div>
-            <div v-else>
-                <span class="loader"></span>
-            </div>
-        </div>
+      </div>
     </div>
   </template>
   
@@ -74,38 +74,14 @@
   </script>
 
   <style>
-  .loader {
-  display: block;
-  width: 84px;
-  height: 84px;
-  position: relative;
-}
-
-.loader:before , .loader:after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: #FFF;
-  transform: translate(-50% , -100%)  scale(0);
-  animation: push_401 2s infinite linear;
-}
-
-.loader:after {
-  animation-delay: 1s;
-}
-
-@keyframes push_401 {
-  0% , 50% {
-    transform: translate(-50% , 0%)  scale(1)
+  .card {
+    width: 18rem;
   }
-
-  100% {
-    transform: translate(-50%, -100%) scale(0)
+  .male {
+    border-color: gold;
   }
-}
+  .female {
+    border-color: pink;
+  }
   </style>
   
