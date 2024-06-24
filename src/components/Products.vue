@@ -3,8 +3,8 @@
       <div class="row">
         <h3 class="display-2">Products</h3>
       </div>
-      <div class="row gap-2">
-        <Card v-for="product in products" :key="product.id">
+      <div class="row gap-2" v-if="products.length">
+        <Card v-for="product in products" :key="product.id" :class="['product-card', { 'out-of-stock': product.status === 'Out-of-stock' }, {'Available': product.status === 'Available'}]">
           <template #cardheader>
               <img class="img-fluid" :src="product.image" :alt="product.productName" loading="lazy">
               {{ product.productName }}</template>
@@ -14,6 +14,11 @@
             <p>Status: {{ product.status }}</p>
           </template>
         </Card>
+      </div>
+      <div class="d-flex justify-content-center" v-else>
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
       </div>
     </div>
   </template>
@@ -55,7 +60,7 @@
             "This vintage-style Bluetooth speaker features a 1950s radio design, digital display, Apple Music and Spotifysupport, and retro dials, adding a touch of nostalgia to any room.",
           price: "R2499.99",
           image: "https://mardoqueiro.github.io/all_images/E-com_/Retro_Products/Retro.Queiro.Bluetooth.Speaker.jpeg",
-          status: "Out of stock"
+          status: "Out-of-stock"
         },
         {
           id: 4,
@@ -63,7 +68,7 @@
           description: "This portable record player, with a retro design and built-in speaker, offers a convenient way to enjoy your vinyl  collection on the go.",
           price: "R1699.99",
           image: "https://mardoqueiro.github.io/all_images/E-com_/Retro_Products/Retro.Queiro.Vinyl.Portable.Turntable.jpeg",
-          status: "Out of stock"
+          status: "Out-of-stock"
         },
         {
           id: 5,
@@ -71,7 +76,7 @@
           description: "This retro jukebox features modern features like karaoke, AM/FM radio, Bluetooth, and Spotify & Apple Musicsupport, with vibrant LED lights and a classic design for home entertainment.",
           price: "R5499.99",
           image: "https://mardoqueiro.github.io/all_images/E-com_/Retro_Products/Retro.Queiro.Jukebox.jpeg",
-          status: "Out of stock"
+          status: "Out-of-stock"
         },
         {
           id: 6,
@@ -87,4 +92,15 @@
     },
   };
   </script>
-  
+
+<style scoped>
+.card {
+  width: 18rem;
+}
+.out-of-stock {
+  border: 2px solid red;
+}
+.Available {
+  border: 2px solid green;
+}
+</style>
