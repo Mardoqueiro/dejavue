@@ -13,7 +13,7 @@
   };
   </script>
   
-  <style>
+  <style scoped>
   .card {
     width: 18rem;
   }
